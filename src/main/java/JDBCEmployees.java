@@ -1,28 +1,19 @@
 import java.sql.*;
 import com.mysql.cj.jdbc.Driver;
+import java.sql.DriverManager;
 
 public class JDBCEmployees {
     public static void main(String[] args) {
         try {
-            // register driver
-            // create connection
-            // create statement
-            // (Select) execute the query with statement
-            // scroll through ResultSet to print album artists
-
-            // register driver
-
+            Config config = new Config();
             DriverManager.registerDriver(new Driver());
-
-            // create connection
-
             Connection connection = DriverManager.getConnection(
                     // DB connection url
-                    Config.getUrl(),
+                    config.getUrl(),
                     // DB username
-                    Config.getUser(),
+                    config.getUser(),
                     // DB password
-                    Config.getPassword()
+                    config.getPassword()
             );
 
             // create statement

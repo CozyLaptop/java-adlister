@@ -15,14 +15,14 @@ public class JDBCTest {
             DriverManager.registerDriver(new Driver());
 
             // create connection
-
+            Config config = new Config();
             Connection connection = DriverManager.getConnection(
                     // DB connection url
-                    "jdbc:mysql://localhost/codeup_test_db?serverTimezone=UTC&useSSL=false&allowPublicKeyRetrieval=true",
+                    config.getUrl(),
                     // DB username
-                    Config.getUser(),
+                    config.getUser(),
                     // DB password
-                    Config.getPassword()
+                    config.getPassword()
             );
 
             // create statement
